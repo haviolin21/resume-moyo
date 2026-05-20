@@ -1,18 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32" height="32">
   <defs>
-    <!-- 고급스러운 블루-인디고 그라디언트 -->
-    <linearGradient id="favicon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4f46e5" /> <!-- Indigo -->
-      <stop offset="100%" stop-color="#2563eb" /> <!-- Blue -->
-    </linearGradient>
+    <!-- iOS 앱 아이콘 스타일의 둥근 모서리 클립 패스 -->
+    <clipPath id="rounded-corners">
+      <rect x="0" y="0" width="512" height="512" rx="100" ry="100" />
+    </clipPath>
   </defs>
-  <!-- 둥근 사각형 배경 -->
-  <rect width="32" height="32" rx="8" fill="url(#favicon-grad)" />
-  <!-- H 형상화 (세련되고 안정적인 구조) -->
-  <!-- 왼쪽 기둥 -->
-  <rect x="7" y="7" width="5" height="18" rx="1.5" fill="#ffffff" />
-  <!-- 오른쪽 기둥 -->
-  <rect x="20" y="7" width="5" height="18" rx="1.5" fill="#ffffff" />
-  <!-- 가운데 연결부 (살짝 유기적으로 연결되도록 라운딩 처리된 바) -->
-  <rect x="11" y="14" width="10" height="4" rx="1" fill="#ffffff" />
+  <!-- 원본 이미지를 불러와 클립 패스를 적용하여 모서리를 둥글게 깎음 -->
+  <image href="/favicon_raw.png" width="512" height="512" clip-path="url(#rounded-corners)" />
 </svg>
