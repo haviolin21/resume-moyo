@@ -1,0 +1,83 @@
+.motivation-section {
+  background-color: var(--bg-white);
+}
+
+.motivation-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.motivation-intro-text {
+  font-size: 1.0625rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin-top: 12px;
+  letter-spacing: -0.01em;
+}
+
+.motivation-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.motivation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.motivation-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.motivation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.motivation-card-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+}
+
+.motivation-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-medium);
+  letter-spacing: -0.02em;
+}
+
+.motivation-card-body strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .motivation-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

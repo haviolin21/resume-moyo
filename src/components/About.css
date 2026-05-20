@@ -1,0 +1,127 @@
+.about-section {
+  background-color: var(--bg-gray);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.section-title-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-subtitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.1em;
+}
+
+.section-desc-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-intro {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text-medium);
+  letter-spacing: -0.02em;
+}
+
+.about-intro strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* 강점 그리드 */
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.strength-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.strength-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.icon-wrapper {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strength-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.strength-card-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-medium);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.strength-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto; /* 리스트가 카드의 하단에 정렬되도록 */
+}
+
+.strength-list-item {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-medium);
+  position: relative;
+  padding-left: 16px;
+  letter-spacing: -0.01em;
+}
+
+.strength-list-item::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+  .section-header-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .strengths-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

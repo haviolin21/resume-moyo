@@ -1,0 +1,329 @@
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  padding: 80px 0 120px 0;
+  overflow: hidden;
+  background-color: var(--bg-white);
+}
+
+/* 뒷배경의 부드러운 파란 글로우 효과 */
+.hero-bg-glow {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(86, 111, 238, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-tag {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.hero-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-title .text-gray {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.hero-title .text-focus {
+  color: var(--primary-color);
+  background: linear-gradient(120deg, var(--primary-color) 0%, #3182ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-medium);
+  margin-bottom: 36px;
+  letter-spacing: -0.02em;
+}
+
+.hero-description strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+/* 연락처 카드 */
+.hero-contact-cards {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.contact-card {
+  flex: 1;
+  background-color: var(--bg-gray);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: var(--transition-fast);
+}
+
+.contact-card:hover {
+  border-color: rgba(86, 111, 238, 0.3);
+  background-color: var(--bg-white);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+.contact-icon {
+  color: var(--primary-color);
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: content-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  transition: var(--transition-fast);
+}
+
+.contact-value:hover {
+  color: var(--primary-color);
+}
+
+/* 액션 버튼 */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1.0625rem;
+}
+
+/* 우측 비주얼 보드 */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-mockup {
+  width: 100%;
+  max-width: 360px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.dashboard-mockup:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(86, 111, 238, 0.08);
+}
+
+.mockup-header {
+  background-color: var(--bg-gray);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mockup-dots {
+  display: flex;
+  gap: 6px;
+  margin-right: 16px;
+}
+
+.mockup-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+}
+
+.mockup-dots .dot:nth-child(1) { background-color: #FF5F56; }
+.mockup-dots .dot:nth-child(2) { background-color: #FFBD2E; }
+.mockup-dots .dot:nth-child(3) { background-color: #27C93F; }
+
+.mockup-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mockup-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mockup-stat {
+  padding: 16px;
+  background-color: var(--bg-gray);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-medium);
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.stat-value.text-blue {
+  color: var(--primary-color);
+}
+
+.stat-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* 스크롤 지시자 */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--transition-fast);
+}
+
+.scroll-indicator:hover {
+  color: var(--primary-color);
+}
+
+.arrow-bounce {
+  animation: bounce 1.6s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .hero-content {
+    align-items: center;
+  }
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  .hero-contact-cards {
+    max-width: 500px;
+  }
+  .hero-actions {
+    justify-content: center;
+    width: 100%;
+  }
+  .hero-visual {
+    margin-top: 20px;
+  }
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .hero-contact-cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+}

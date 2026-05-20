@@ -1,0 +1,118 @@
+.education-section {
+  background-color: var(--bg-gray);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.education-header {
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+}
+
+.education-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.column-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 12px;
+}
+
+.column-title svg {
+  color: var(--primary-color);
+}
+
+.education-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 카드 세부 스타일 */
+.edu-card, .course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edu-period, .course-period {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.edu-title, .course-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.edu-desc {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-medium);
+}
+
+.course-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.course-desc {
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  font-weight: 500;
+  background-color: var(--bg-gray);
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.course-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.course-bullet-item {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-medium);
+  position: relative;
+  padding-left: 16px;
+  letter-spacing: -0.01em;
+}
+
+.course-bullet-item::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
