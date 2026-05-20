@@ -58,9 +58,6 @@ const Hero = () => {
               <FileDown size={20} />
               이력서 PDF 다운로드
             </a>
-            <button onClick={scrollToAbout} className="btn btn-secondary btn-large">
-              더 알아보기
-            </button>
           </div>
         </div>
 

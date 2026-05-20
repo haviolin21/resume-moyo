@@ -1,0 +1,62 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary-color, #2563eb);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+  z-index: 99;
+  
+  /* 기본적으로 숨겨진 상태 */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+/* 스크롤이 내려가서 나타나는 상태 */
+.scroll-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: #1d4ed8; /* 좀 더 어두운 블루 */
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px);
+}
+
+/* 모바일 기기에서의 반응형 대응 */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 24px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+  }
+  
+  .scroll-to-top.show {
+    transform: translateY(0);
+  }
+  
+  .scroll-to-top:hover {
+    /* 모바일에서는 터치 후 hover 효과가 남아 어색하므로 transform을 제어합니다 */
+    transform: translateY(0);
+  }
+}

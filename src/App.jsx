@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   useEffect(() => {
@@ -52,6 +53,7 @@ function App() {
         <Education />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
