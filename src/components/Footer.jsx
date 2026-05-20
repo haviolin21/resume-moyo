@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <span className="footer-logo">moyo</span>
+          <span className="footer-logo">yuntaek</span>
           <p className="footer-tagline">
             고객과 비즈니스의 연결을 돕는 데이터 기반 Operations 전문가
           </p>
@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p className="copyright">
-          © {new Date().getFullYear()} Ha Yun Taek. Portfolio for MOYO Recruit. All rights reserved.
+          © {new Date().getFullYear()} Ha Yun Taek. Portfolio. All rights reserved.
         </p>
       </div>
     </footer>

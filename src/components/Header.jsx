@@ -69,7 +69,7 @@ const Header = () => {
       <div className="header-container">
         {/* 로고 영역 */}
         <div className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className="logo-text">moyo</span>
+          <span className="logo-text">yuntaek</span>
           <span className="logo-sub">포트폴리오</span>
         </div>
 
