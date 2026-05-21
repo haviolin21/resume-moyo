@@ -25,12 +25,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-actions">
-            <a href="/resume_yuntaek.pdf" download="하윤택_이력서.pdf" className="footer-link-download">
-              <FileText size={14} />
-              <span>이력서 PDF 다운로드</span>
-            </a>
-          </div>
+
         </div>
       </div>
       <div className="footer-bottom">

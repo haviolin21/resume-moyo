@@ -92,15 +92,17 @@ const Header = () => {
 
           {/* 다크 모드 토글 */}
           <button
-            className="theme-toggle"
+            className={`theme-toggle-switch ${theme}`}
             onClick={toggleTheme}
             aria-label={theme === 'light' ? '다크 모드로 전환' : '라이트 모드로 전환'}
             title={theme === 'light' ? '다크 모드' : '라이트 모드'}
           >
-            {theme === 'light'
-              ? <Moon size={18} />
-              : <Sun size={18} />
-            }
+            <div className="switch-thumb">
+              {theme === 'light'
+                ? <Sun size={14} className="icon-sun" />
+                : <Moon size={14} className="icon-moon" />
+              }
+            </div>
           </button>
 
           <a href="/resume_yuntaek.pdf" download="하윤택_이력서.pdf" className="btn-download">
@@ -112,11 +114,16 @@ const Header = () => {
         {/* 모바일 햄버거 버튼 */}
         <div className="mobile-controls">
           <button
-            className="theme-toggle"
+            className={`theme-toggle-switch ${theme}`}
             onClick={toggleTheme}
             aria-label={theme === 'light' ? '다크 모드로 전환' : '라이트 모드로 전환'}
           >
-            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+            <div className="switch-thumb">
+              {theme === 'light'
+                ? <Sun size={14} className="icon-sun" />
+                : <Moon size={14} className="icon-moon" />
+              }
+            </div>
           </button>
           <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="메뉴 토글">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
