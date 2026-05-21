@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, FileText, Sun, Moon } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [theme, setTheme] = useState('light');
 
   const menuItems = [
     { label: '소개', id: 'about' },
@@ -15,17 +16,18 @@ const Header = () => {
     { label: '학력·교육', id: 'education' }
   ];
 
+  // 초기 테마 동기화 (index.html 스크립트와 맞춤)
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const currentAttr = document.documentElement.getAttribute('data-theme');
+    setTheme(savedTheme || currentAttr || 'light');
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
 
-      // 스크롤 위치에 따른 액티브 메뉴 갱신
       const scrollPosition = window.scrollY + 100;
-      
       const current = menuItems.find(item => {
         const el = document.getElementById(item.id);
         if (el) {
@@ -51,17 +53,20 @@ const Header = () => {
     setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // GNB 높이 보정
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
       const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
+  };
+
+  const toggleTheme = () => {
+    const next = theme === 'light' ? 'dark' : 'light';
+    setTheme(next);
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
   };
 
   return (
@@ -84,6 +89,20 @@ const Header = () => {
               {item.label}
             </button>
           ))}
+
+          {/* 다크 모드 토글 */}
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'light' ? '다크 모드로 전환' : '라이트 모드로 전환'}
+            title={theme === 'light' ? '다크 모드' : '라이트 모드'}
+          >
+            {theme === 'light'
+              ? <Moon size={18} />
+              : <Sun size={18} />
+            }
+          </button>
+
           <a href="/resume_yuntaek.pdf" download="하윤택_이력서.pdf" className="btn-download">
             <FileText size={16} />
             이력서 받기
@@ -91,9 +110,18 @@ const Header = () => {
         </nav>
 
         {/* 모바일 햄버거 버튼 */}
-        <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="메뉴 토글">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="mobile-controls">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'light' ? '다크 모드로 전환' : '라이트 모드로 전환'}
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+          <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="메뉴 토글">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* 모바일 네비게이션 드로어 */}
@@ -108,9 +136,9 @@ const Header = () => {
               {item.label}
             </button>
           ))}
-          <a 
-            href="/resume_yuntaek.pdf" 
-            download="하윤택_이력서.pdf" 
+          <a
+            href="/resume_yuntaek.pdf"
+            download="하윤택_이력서.pdf"
             className="mobile-btn-download"
             onClick={() => setIsOpen(false)}
           >

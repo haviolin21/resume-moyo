@@ -75,16 +75,25 @@ const Hero = () => {
               <div className="mockup-stat">
                 <span className="stat-label">IVR 프로젝트</span>
                 <span className="stat-value text-blue">연 2억 → 월 200만</span>
+                <div className="stat-gauge">
+                  <div className="stat-gauge-fill" style={{ '--gauge-width': '70%' }}></div>
+                </div>
                 <span className="stat-desc">연간 약 2억 원 인건비를 월 200만 원 수준 IVR 비용으로 절감</span>
               </div>
               <div className="mockup-stat">
                 <span className="stat-label">중고나라 페이</span>
                 <span className="stat-value text-blue">결제액 2.4배 상승</span>
+                <div className="stat-gauge">
+                  <div className="stat-gauge-fill" style={{ '--gauge-width': '85%' }}></div>
+                </div>
                 <span className="stat-desc">결제 편의성 및 운영 프로세스 최적화</span>
               </div>
               <div className="mockup-stat">
                 <span className="stat-label">중고나라 연동 효과</span>
                 <span className="stat-value text-blue">회원 1.6배 · 상품 2배</span>
+                <div className="stat-gauge">
+                  <div className="stat-gauge-fill" style={{ '--gauge-width': '75%' }}></div>
+                </div>
                 <span className="stat-desc">중고나라 연동으로 인한 회원 수 및 상품 등록 수 증가</span>
               </div>
             </div>

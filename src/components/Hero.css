@@ -113,11 +113,11 @@
 
 .contact-icon {
   color: var(--primary-color);
-  background-color: #FFFFFF;
+  background-color: var(--bg-white);
   padding: 10px;
   border-radius: 10px;
   box-sizing: content-box;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 10px var(--card-shadow);
 }
 
 .contact-info {
@@ -164,17 +164,17 @@
 .dashboard-mockup {
   width: 100%;
   max-width: 360px;
-  background-color: #FFFFFF;
+  background-color: var(--bg-white);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 40px var(--card-shadow);
   overflow: hidden;
   transition: var(--transition-normal);
 }
 
 .dashboard-mockup:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(86, 111, 238, 0.08);
+  box-shadow: 0 30px 60px rgba(86, 111, 238, 0.15);
 }
 
 .mockup-header {
@@ -246,6 +246,34 @@
 .stat-desc {
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+/* 마이크로 대시보드 게이지바 */
+.stat-gauge {
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  margin: 6px 0 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-gauge-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), #3182ce);
+  border-radius: 3px;
+  width: 0;
+  animation: progress-load 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: width;
+}
+
+@keyframes progress-load {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--gauge-width, 70%);
+  }
 }
 
 /* 스크롤 지시자 */
